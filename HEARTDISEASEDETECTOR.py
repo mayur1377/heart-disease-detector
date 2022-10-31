@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import sklearn
 import pickle
+from sklearn.metrics import classification_report
 st.set_page_config(layout="wide")
 st.markdown("""
 <style>
