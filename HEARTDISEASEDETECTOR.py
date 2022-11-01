@@ -4,8 +4,6 @@ import pandas as pd
 import sklearn
 import pickle
 import sys
-!{sys.executable} -m pip install sklearn
-from sklearn.metrics import classification_report
 st.set_page_config(layout="wide")
 st.markdown("""
 <style>
