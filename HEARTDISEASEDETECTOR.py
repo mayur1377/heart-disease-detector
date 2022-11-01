@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 import pickle
 import sklearn
-# from scipy.stats import zscore
 st.set_page_config(layout="wide")
 st.markdown("""
 <style>
