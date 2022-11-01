@@ -1,9 +1,9 @@
+from pyexpat import model
 import streamlit as st
 import numpy as np
 import pandas as pd
-import sklearn
 import pickle
-import sys
+import sklearn
 st.set_page_config(layout="wide")
 st.markdown("""
 <style>
