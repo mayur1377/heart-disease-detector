@@ -4,11 +4,6 @@ import numpy as np
 import pandas as pd
 import pickle
 import sklearn
-# import scipy
-# import streamlit as st
-# import pandas as pd
-from sklearn.linear_model import LogisticRegression
-from sklearn.calibration import CalibratedClassifierCV
 # from scipy.stats import zscore
 st.set_page_config(layout="wide")
 st.markdown("""
