@@ -55,10 +55,10 @@ You can [view](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-a
 
 
 ##  LIBRARIES USED
-PANDAS
-NUMPY
-STREAMLIT
-SKLEARN
+ PANDAS
+ NUMPY
+ STREAMLIT
+ SKLEARN
 
 ## HOSTING
 the project is deployed with [streamlit](https://streamlit.io/) , you can check the live demo [here](https://heart-disease-detector.streamlitapp.com/)
