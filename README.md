@@ -55,14 +55,14 @@ You can [view](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-a
 
 
 ##  LIBRARIES USED
- pandas
- numpy
- streamlit
- sklearn
+- pandas
+- numpy
+- streamlit
+- sklearn
 
 ## HOSTING
-the project is deployed with [streamlit](https://streamlit.io/) , you can check the live demo [here](https://heart-disease-detector.streamlitapp.com/)
+The project is deployed with [streamlit](https://streamlit.io/) , you can check the live demo [here](https://heart-disease-detector.streamlitapp.com/)
 
 # RESULT
-the poject has been sucessfully implemented with an accuracy of  **88.01%**
+The project has been sucessfully implemented with an accuracy of  **88.01%**
 CHECK OUT THE LIVE [PROJECT](https://heart-disease-detector.streamlitapp.com/)
