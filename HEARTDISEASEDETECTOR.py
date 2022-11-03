@@ -15,8 +15,21 @@ st.markdown("""
 .sizebig
 {
     font-size:2.5rem;
-    font-style:bold;
-    
+    font-style:bold;   
+}
+.sucess
+{
+    font-size:3rem;
+    color:#3c8a1e;
+    position:relative;
+    text-align:center;
+}
+.fail
+{
+      font-size:3rem;
+    color:#8a1e1e;
+    position:relative;
+    text-align:center;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -123,11 +136,12 @@ form = st.form(key='my-form')
 submit = form.form_submit_button('SUBMIT')
 if submit:
     if prediction==0 :
-         st.write("EVERYTHING SEEMS HEALTHY! HAVE A GREAT DAY")
+         st.write('<p class="sucess">EVERYTHING SEEMS HEALTHY! HAVE A GREAT DAY</p>', unsafe_allow_html=True )
          
          
     else  : 
-         st.write("YOUR HEART DOSENT SEEM HEALTHY , VISIT A [CARDIOLIGIST](https://www.google.com/search?q=cardiologist+near+me&rlz=1C1RXQR_enIN1028IN1028&oq=CARDIO&aqs=chrome.0.69i59j69i57j0i433i512l2j0i131i433i512l2j0i402j69i60.1824j0j7&sourceid=chrome&ie=UTF-8) NOW")
+         st.write('<p class="fail">VISIT A CARDIOLIGIST NOW </p>', unsafe_allow_html=True  )
+         st.write("FIND [CARDIOLIGIST](https://www.google.com/search?q=cardiologist+near+me&rlz=1C1RXQR_enIN1028IN1028&oq=CARDIO&aqs=chrome.0.69i59j69i57j69i59j0i271l2j69i60j69i61.1218j0j1&sourceid=chrome&ie=UTF-8) NEAR ME")
         #  image = Image.open('download.png')
         #  st.image(image, caption='3 marla plot',use_column_width=True)
 
