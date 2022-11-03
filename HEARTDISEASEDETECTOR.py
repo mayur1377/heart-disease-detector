@@ -3,6 +3,8 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
+from PIL import Image
+import cv2
 st.set_page_config(layout="wide")
 st.markdown("""
 <style>
@@ -53,15 +55,15 @@ def userinput():
     else : cp=3
 
     
-    tres = st.number_input('RESTING BLOOD PREASSURE in mm Hg: ' ,  help="Elevated blood pressure is when readings consistently range from 120-129 systolic and less than 80 mm Hg diastolic.")
+    tres = st.number_input('RESTING BLOOD PREASSURE in mm Hg: ' ,min_value=120.00 , max_value=130.00 ,   help="Elevated blood pressure is when readings consistently range from 120-129 systolic and less than 80 mm Hg diastolic.")
 
-    chol = st.number_input('SERUM CHOLESTORAL IN mg/dl: ' ,  help="A person’s serum cholesterol level can indicate their risk of developing conditions such as heart disease. Range - 125 to 200mg/dL")
+    chol = st.number_input('SERUM CHOLESTORAL IN mg/dl: ' ,  min_value=120.00 ,max_value=201.00 ,    help="A person’s serum cholesterol level can indicate their risk of developing conditions such as heart disease. Range - 125 to 200mg/dL")
 
-    fbs = st.selectbox('FASTING BLOOD SUGAR >120 mg/dl ',('TRUE' , 'FALSE') , help="This measures your blood sugar after an overnight fast (not eating).")
+    fbs = st.selectbox('FASTING BLOOD SUGAR >120 mg/dl ',('TRUE' , 'FALSE') ,  help="This measures your blood sugar after an overnight fast (not eating).")
     if(fbs=='TRUE') : fbs=1
     else : fbs=0
 
-    res = st.number_input('RESTING ELECTROCARDIOGRAPHIC RESULTS: ' , help="An ECG can help detect: arrhythmias – where the heart beats too slowly, too quickly, or irregularly.")
+    res = st.number_input('RESTING ELECTROCARDIOGRAPHIC RESULTS: ' ,  min_value=0 , help="An ECG can help detect: arrhythmias – where the heart beats too slowly, too quickly, or irregularly.")
     tha = st.number_input('MAXIMUM HEART RATE ACHIEVED: ' , help="It is the highest number of beats your heat can pump per minute when it's under high stress .")
 
 
