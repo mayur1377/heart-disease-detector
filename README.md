@@ -14,6 +14,45 @@ This project focuses to reduce the risk factor by letting a patient know if thei
 in this I've trained the **Logistic Regression Model** to check if a patient is at a risk of a heart disease
 
 
+## SETUP
+
+To install the dependencies, you can simply follow this steps.
+
+Clone the project repository:
+```bash
+git clone https://github.com/mayur1377/heart-disease-detector
+cd streamlit-example
+```
+
+To create and activate the virtual environment, follow these steps:
+
+
+
+**Using `virtualenv`**
+
+```bash
+
+$ virtualenv streamlit --python=python3
+
+# Activate the virtual environment:
+$ source streamlit/bin/activate
+
+# To deactivate (when you're done):
+(streamlit)$ deactivate
+```
+
+To install the requirements using `pip`, once the virtual environment is active:
+```bash
+(streamlit)$ pip install -r requirements.txt
+```
+
+#### Running the script
+
+Finally, if you want to run the main script:
+```bash
+(streamlit)$ streamlit run HEARTDISEASEDETECTOR.py
+```
+
 ## DATASET
 I've used a data set from [kaggle](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset) which contains a record of a total of 304 patients.
 
