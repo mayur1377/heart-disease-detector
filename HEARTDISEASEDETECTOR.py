@@ -3,8 +3,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
-from PIL import Image
-import cv2
 st.set_page_config(layout="wide")
 st.markdown("""
 <style>
