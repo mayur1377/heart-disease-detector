@@ -3,14 +3,15 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
-# import scikit-learn
+from PIL import Image
+import cv2
 st.set_page_config(layout="wide")
 st.markdown("""
 <style>
 .big-font {
     font-size:2rem !important;
     text-align:center;
-    color:white;
+    color:color;
 
 }
 .sizebig
@@ -47,37 +48,38 @@ def userinput():
     elif sex=='FEMALE': sex=0
     # st.write(sex)
 
-    cp = st.selectbox('CHEST PAIN TYPE',('TYPICAL ANGINA','ATYPICAL ANGINA','NON-ANGINAL PAIN','ASYMPTOMATIC'))
+    cp = st.selectbox('CHEST PAIN TYPE',('TYPICAL ANGINA','ATYPICAL ANGINA','NON-ANGINAL PAIN','ASYMPTOMATIC'),  help="There are 4 types : typical angina, atypical angina , non-anginal pain and asymptomatic")
     if(cp=='TYPICAL ANGINA'):cp=0
     elif cp=='ATYPICAL ANGINA':cp=1
     elif cp=='NON-ANGINAL PAIN' :cp=2
     else : cp=3
 
     
-    tres = st.number_input('RESTING BLOOD PREASSURE in mm Hg: ')
+    tres = st.number_input('RESTING BLOOD PREASSURE in mm Hg: ' ,  help="Elevated blood pressure is when readings consistently range from 120-129 systolic and less than 80 mm Hg diastolic.")
 
-    chol = st.number_input('SERUM CHOLESTORAL IN mg/dl: ')
+    chol = st.number_input('SERUM CHOLESTORAL IN mg/dl: ' ,  help="A person’s serum cholesterol level can indicate their risk of developing conditions such as heart disease. Range - 125 to 200mg/dL")
 
-    fbs = st.selectbox('FASTING BLOOD SUGAR >120 mg/dl ',('TRUE' , 'FALSE'))
+    fbs = st.selectbox('FASTING BLOOD SUGAR >120 mg/dl ',('TRUE' , 'FALSE') , help="This measures your blood sugar after an overnight fast (not eating).")
     if(fbs=='TRUE') : fbs=1
     else : fbs=0
 
-    res = st.number_input('RESTING ELECTROCARDIOGRAPHIC RESULTS: ')
-    tha = st.number_input('MAXIMUM HEART RATE ACHIEVED: ')
+    res = st.number_input('RESTING ELECTROCARDIOGRAPHIC RESULTS: ' , help="An ECG can help detect: arrhythmias – where the heart beats too slowly, too quickly, or irregularly.")
+    tha = st.number_input('MAXIMUM HEART RATE ACHIEVED: ' , help="It is the highest number of beats your heat can pump per minute when it's under high stress .")
 
 
-    exa = st.selectbox('EXERCISE INDUCED ANGINA: ',('YES','NO'))
+    exa = st.selectbox('EXERCISE INDUCED ANGINA: ',('YES','NO') , help="Angina may feel like pressure in the chest, jaw or arm. It often occurs with exercise or stress.")
     if exa=='YES' : exa=1
     else : exa=0
 
-    old = st.number_input('OLDPEAK ')
-    slope = st.number_input('HE SLOPE OF THE PEAK EXERCISE ST SEGMEN: ')
-    ca = st.selectbox('NUMBER OF MAJOR VESSELS COLORED BY FLOUROSOPY',(0,1,2,3))
+    old = st.number_input('OLDPEAK ' ,  help=" ST depression induced by exercise relative to rest")
+    slope = st.selectbox('SLOPE OF THE PEAK EXERCISE ST SEGMEN: ' , (0,1,2) ,  help="The slope of the peak exercise ST segment:1 = up sloping, 2 = flat, 3 = down sloping")
+    
+    ca = st.selectbox('NUMBER OF MAJOR VESSELS COLORED BY FLOUROSOPY',(0,1,2,3) ,  help="NUMBER OF MAJOR VESSELS COLORED BY FLUOROSCOPY THAT RANGED BETWEEN 0 AND 3")
 
-    thal = st.selectbox('THAL',('NORMAL','FIXED DEFECT','REVERSABLE DEFECT'))
-    if thal=='NORMAL': thal=0
-    elif thal=="FIXED DEFECT":thal=1
-    else :thal=4
+    thal = st.selectbox('THAL',('NORMAL','FIXED DEFECT','REVERSABLE DEFECT') , help="  NORMAL BLOOD FLOW , FIXED DEFECT (NO BLOOD FLOW IN SOME PART OF THE HEART) , REVERSIBLE DEFECT (A BLOOD FLOW IS OBSERVED BUT IT IS NOT NORMAL)")
+    if thal=='NORMAL': thal=1
+    elif thal=="FIXED DEFECT":thal=2
+    else :thal=3
     # st.write(thal)
 
 
@@ -89,7 +91,7 @@ def userinput():
             'fbs': fbs,
             'restecg': res,
             'thalach':tha,
-            'exang':exa,
+            'exang':exa ,
             'oldpeak':old,
             'slope':slope,
             'ca':ca,
@@ -122,7 +124,13 @@ prediction = model.predict(df)
 form = st.form(key='my-form')
 submit = form.form_submit_button('SUBMIT')
 if submit:
-    if prediction==0 : st.write("EVERYTHING SEEMS HEALTHY! HAVE A GREAT DAY")
-    else  : st.write("YOUR HEART DOSENT SEEM HEALTHY , VISIT A [CARDIOLIGIST](https://www.google.com/search?q=cardiologist+near+me&rlz=1C1RXQR_enIN1028IN1028&oq=CARDIO&aqs=chrome.0.69i59j69i57j0i433i512l2j0i131i433i512l2j0i402j69i60.1824j0j7&sourceid=chrome&ie=UTF-8) NOW")
+    if prediction==0 :
+         st.write("EVERYTHING SEEMS HEALTHY! HAVE A GREAT DAY")
+         
+         
+    else  : 
+         st.write("YOUR HEART DOSENT SEEM HEALTHY , VISIT A [CARDIOLIGIST](https://www.google.com/search?q=cardiologist+near+me&rlz=1C1RXQR_enIN1028IN1028&oq=CARDIO&aqs=chrome.0.69i59j69i57j0i433i512l2j0i131i433i512l2j0i402j69i60.1824j0j7&sourceid=chrome&ie=UTF-8) NOW")
+        #  image = Image.open('download.png')
+        #  st.image(image, caption='3 marla plot',use_column_width=True)
 
 
