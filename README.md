@@ -21,7 +21,7 @@ To install the dependencies, you can simply follow this steps.
 Clone the project repository:
 ```bash
 git clone https://github.com/mayur1377/heart-disease-detector
-cd streamlit-example
+cd heart-disease-detector
 ```
 
 To create and activate the virtual environment, follow these steps:
@@ -35,22 +35,22 @@ To create and activate the virtual environment, follow these steps:
 $ virtualenv streamlit --python=python3
 
 # Activate the virtual environment:
-$ source streamlit/bin/activate
+$ source heart-disease-detector/bin/activate
 
 # To deactivate (when you're done):
-(streamlit)$ deactivate
+(heart-disease-detector)$ deactivate
 ```
 
 To install the requirements using `pip`, once the virtual environment is active:
 ```bash
-(streamlit)$ pip install -r requirements.txt
+(heart-disease-detector)$ pip install -r requirements.txt
 ```
 
 #### Running the script
 
 Finally, if you want to run the main script:
 ```bash
-(streamlit)$ streamlit run HEARTDISEASEDETECTOR.py
+(heart-disease-detector)$ streamlit run HEARTDISEASEDETECTOR.py
 ```
 
 # DATASET
