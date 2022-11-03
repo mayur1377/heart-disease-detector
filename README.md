@@ -2,19 +2,19 @@
 
 This is a web based machine learning project which is used to check if a patient is suffering from a heart disease or not by taking the parameters from the user
 
-## PROBLEM
+# PROBLEM
 Cardiovascular disease is the leading cause of deaths in India both across the rural and urban population, according to the World Atlas. This is backed up by data from the Centers for Disease Control and Prevention, which identifies heart disease, chronic obstructive pulmonary disease and stroke as the top three killers.
 
 Cardiovascular diseases accounts for 24.8% of deaths in India, the early prognosis of cardiovascular diseases can aid in making decisions on lifestyle changes in high risk patients and in turn reduce the complications.
 
 This project focuses to reduce the risk factor by letting a patient know if their heart is at a risk or not.
 
-## SOLUTION
+# SOLUTION
 
 in this I've trained the **Logistic Regression Model** to check if a patient is at a risk of a heart disease
 
 
-## SETUP
+# SETUP
 
 To install the dependencies, you can simply follow this steps.
 
@@ -53,7 +53,7 @@ Finally, if you want to run the main script:
 (streamlit)$ streamlit run HEARTDISEASEDETECTOR.py
 ```
 
-## DATASET
+# DATASET
 I've used a data set from [kaggle](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset) which contains a record of a total of 304 patients.
 
 You can [view](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset) the file directly here.
@@ -78,13 +78,13 @@ You can [view](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-a
 - thal: 0 = normal; 1 = fixed defect; 2 = reversable defect
 
 
-##  LIBRARIES USED
+#  LIBRARIES USED
 - pandas
 - numpy
 - streamlit
 - sklearn
 
-## HOSTING
+# HOSTING
 The project is deployed with [streamlit](https://streamlit.io/) , you can check the live demo [here](https://heart-disease-detector.streamlitapp.com/)
 
 # RESULT
