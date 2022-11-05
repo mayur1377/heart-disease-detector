@@ -1,4 +1,7 @@
 # [HEART DISEASE DETECTOR](https://heart-disease-detector.streamlitapp.com/)
+![](https://i.ibb.co/pXbcDzH/image.png)
+
+
 
 This is a web based machine learning project which is used to check if a patient is suffering from a heart disease or not by taking the parameters from the user
 
