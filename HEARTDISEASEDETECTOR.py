@@ -51,7 +51,7 @@ st.sidebar.write("")
 st.sidebar.write("DEVELOPED BY [MAYUR](https://github.com/mayur1377) ")
 
 
-st.markdown('<p class="big-font">HEART DISEASE PREDICTOR</p>', unsafe_allow_html=True)
+st.markdown('<p class="big-font">CARDIO CARE</p>', unsafe_allow_html=True)
 def userinput():
     age = st.number_input('ENTER YOUR AGE: ')
     sex  = st.selectbox('SEX',('MALE' ,  'FEMALE'))
